@@ -1,0 +1,10 @@
+.app__news-header {
+  font-size: 1.6rem;
+  font-weight: 700;
+  flex: 0.33;
+  text-align: right;
+
+  span {
+    color: var(--red);
+  }
+}

@@ -1,0 +1,46 @@
+table {
+  width: 1200px !important;
+  margin-top: 2rem;
+  margin-bottom: 2rem !important;
+  border-radius: 20px !important;
+  border-top: 1px solid #000;
+  text-align: center;
+}
+
+th {
+  padding: 1rem !important;
+  background-color: var(--bgSecondary) !important;
+}
+
+td {
+  padding: 1.4rem 1rem !important;
+  font-weight: 400 !important;
+}
+
+.table {
+  padding: 2rem !important;
+}
+
+.table-head-row {
+  padding: 1rem !important;
+}
+
+.crypto-name {
+  font-weight: 700 !important;
+  text-align: left;
+}
+
+.crypto-logo {
+  height: 24px;
+  width: 24px;
+  margin-right: 8px;
+}
+
+.green {
+  color: yellowgreen;
+  font-weight: 500 !important;
+}
+
+.red {
+  color: var(--red);
+}
