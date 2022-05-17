@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./News.scss";
 import axios from "axios";
 
-import letsgo from "../../images/letsgo.jpg";
+import NewsImg from "../../images/News.png";
 
 function News() {
   const [germanNews, setGermanNews] = useState([]);
@@ -37,14 +37,13 @@ function News() {
               <div className="news-card">
                 <div className="news-head">
                   <img
-                    src={news?.metadata?.image || letsgo}
+                    src={news?.metadata?.image || NewsImg}
                     alt="news-image"
                     className="news-image"
                   />
                   <h3 key={news.id}>{news.title}</h3>
                 </div>
-
-                {news.metadata.description.substring(0, 120)}
+                <p>{news.metadata.description.substring(0, 120)}</p>
               </div>
             </a>
           ))}
@@ -56,7 +55,7 @@ function News() {
               <div className="news-card">
                 <div className="news-head">
                   <img
-                    src={news?.metadata?.image || letsgo}
+                    src={news?.metadata?.image || NewsImg}
                     alt="news-image"
                     className="news-image"
                   />

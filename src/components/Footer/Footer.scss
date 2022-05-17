@@ -1,0 +1,15 @@
+.app__footer {
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    height: 60px;
+  }
+
+  p {
+    margin-bottom: 0;
+    font-size: 0.85rem;
+  }
+}

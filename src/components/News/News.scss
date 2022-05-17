@@ -5,7 +5,7 @@
 .app__news-header {
   font-size: 1.6rem;
   font-weight: 700;
-  flex: 0.33;
+  flex: 0.315;
   text-align: right;
 
   span {
@@ -25,7 +25,7 @@
     color: var(--text-primary);
 
     &:hover {
-      color: var(--red);
+      color: var(--text-primary);
     }
   }
 
@@ -46,7 +46,7 @@
     }
 
     p {
-      font-size: 1.05rem;
+      font-size: 0.93rem;
     }
 
     .news-head {
@@ -55,12 +55,18 @@
       margin-bottom: 1rem;
       h3 {
         font-size: 1.15rem;
+        font-weight: 700;
+
+        &:hover {
+          color: var(--red);
+        }
       }
-      img {
-        max-width: 260px;
-        max-height: 160px;
-        margin-bottom: 1rem;
-      }
+    }
+
+    img {
+      max-width: 260px;
+      max-height: 160px;
+      margin-bottom: 1rem;
     }
   }
 }
