@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap");
 
 :root {
-  --primary-font: "Montserrat", sans-serif;
+  --primary-font: "Poppins", sans-serif;
 
   --text-primary: #16303a;
   --text-secondary: #fff;
@@ -16,6 +16,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 .app {
@@ -31,7 +32,7 @@
 .app__home,
 .app__crypto,
 .app__news {
-  margin-top: 7em;
+  margin-top: 7rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -47,4 +48,44 @@
   justify-content: space-between;
   width: 100%;
   margin-bottom: 2rem;
+}
+
+.green {
+  color: #00cc00;
+
+  span {
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    margin-left: 4px;
+    font-weight: 400 !important;
+  }
+}
+
+.red {
+  color: var(--red);
+
+  span {
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    margin-left: 4px;
+    font-weight: 400 !important;
+  }
+}
+
+.turkis {
+  color: var(--turkis);
+  font-weight: 700 !important;
+}
+
+.m-bold {
+  font-weight: 700;
+}
+
+.p-text {
+  font-size: 1.08rem;
+  font-weight: 500;
+}
+
+.none {
+  opacity: 0;
 }

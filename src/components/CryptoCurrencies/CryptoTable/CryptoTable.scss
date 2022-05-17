@@ -3,8 +3,13 @@ table {
   margin-top: 2rem;
   margin-bottom: 2rem !important;
   border-radius: 20px !important;
-  border-top: 1px solid #000;
+
   text-align: center;
+}
+
+thead {
+  border-top: 3px solid var(--violett) !important;
+  border-radius: 20px !important;
 }
 
 th {
@@ -34,13 +39,4 @@ td {
   height: 24px;
   width: 24px;
   margin-right: 8px;
-}
-
-.green {
-  color: yellowgreen;
-  font-weight: 500 !important;
-}
-
-.red {
-  color: var(--red);
 }
