@@ -3,6 +3,7 @@ import "./News.scss";
 import axios from "axios";
 
 import NewsImg from "../../images/News.png";
+import { motion } from "framer-motion";
 
 function News() {
   const [germanNews, setGermanNews] = useState([]);
@@ -24,13 +25,21 @@ function News() {
 
   return (
     <div className="app__news" id="News">
-      <div className="app__news-heading">
+      <motion.div
+        whileInView={{ y: [40, 0], opacity: [0, 1] }}
+        transition={{ duration: 0.65 }}
+        className="app__news-heading"
+      >
         <h2 className="app__news-header">
           <span>// </span>Aktuelle Krypto-News
         </h2>
         <div></div>
-      </div>
-      <div className="app__news-show">
+      </motion.div>
+      <motion.div
+        whileInView={{ y: [40, 0], opacity: [0, 1] }}
+        transition={{ duration: 0.65 }}
+        className="app__news-show"
+      >
         {germanNews &&
           germanNews.slice(0, 4).map((news) => (
             <a href={news.url} target="_blank" rel="noreferrer">
@@ -47,8 +56,12 @@ function News() {
               </div>
             </a>
           ))}
-      </div>
-      <div className="app__news-show">
+      </motion.div>
+      <motion.div
+        whileInView={{ y: [40, 0], opacity: [0, 1] }}
+        transition={{ duration: 0.65 }}
+        className="app__news-show"
+      >
         {germanNews &&
           germanNews.slice(5, 9).map((news) => (
             <a href={news.url} target="_blank" rel="noreferrer">
@@ -65,7 +78,7 @@ function News() {
               </div>
             </a>
           ))}
-      </div>
+      </motion.div>
     </div>
   );
 }

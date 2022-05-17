@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import "./Home.scss";
 import axios from "axios";
 import NumberFormat from "react-number-format";
+import { motion } from "framer-motion";
 
 function Home() {
   const [globalStats, setGlobalStats] = useState([]);
@@ -21,13 +22,22 @@ function Home() {
 
   return (
     <div className="app__home">
-      <div className="app__home-heading">
+      <motion.div
+        whileInView={{ y: [40, 0], opacity: [0, 1] }}
+        transition={{ duration: 0.65 }}
+        className="app__home-heading"
+      >
         <h1 className="app__home-header">
           <span>// </span>Globale Krypto-Statistiken
         </h1>
+
         <div></div>
-      </div>
-      <div className="app__home-stats">
+      </motion.div>
+      <motion.div
+        whileInView={{ opacity: [0, 1] }}
+        transition={{ duration: 0.5 }}
+        className="app__home-stats"
+      >
         <div className="app__home-card">
           <h3>Krypto-Marktkapitalisierung</h3>
           <p className="p-text">
@@ -101,7 +111,7 @@ function Home() {
           </p>
           <p className="none">.</p>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
