@@ -1,5 +1,9 @@
 .app__news {
   margin-bottom: 6rem;
+
+  @media screen and (max-width: 400px) {
+    margin-bottom: 4rem;
+  }
 }
 
 .app__news-header {
@@ -7,6 +11,14 @@
   font-weight: 700;
   flex: 0.315;
   text-align: right;
+
+  @media screen and (max-width: 400px) {
+    font-size: 1.2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: center;
+    flex: 1;
+  }
 
   span {
     color: var(--red);
@@ -20,6 +32,10 @@
   align-items: center;
   margin-bottom: 2rem;
 
+  @media screen and (max-width: 400px) {
+    flex-direction: column;
+  }
+
   a {
     text-decoration: none;
     color: var(--text-primary);
@@ -30,8 +46,8 @@
   }
 
   .news-card {
-    width: 300px;
-    max-height: 450px;
+    width: 320px;
+    max-height: 460px;
     margin: 2rem 1rem;
     background: #fff;
     padding: 1.5rem;

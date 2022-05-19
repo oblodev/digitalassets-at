@@ -13,7 +13,9 @@ function Footer() {
       className="app__footer"
     >
       <img src={logo} alt="logo" />
-      <p>Created by dkostka.dev &copy; {year}</p>
+      <p>
+        Created by <a href="https://dkostka.dev">dkostka.dev</a> &copy; {year}
+      </p>
     </motion.div>
   );
 }

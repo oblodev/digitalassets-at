@@ -50,6 +50,13 @@
   margin-bottom: 2rem;
 }
 
+.app__crypto-heading {
+  @media screen and (max-width: 400px) {
+    flex-direction: column;
+    padding-bottom: 2rem;
+  }
+}
+
 .green {
   color: #00cc00;
 
