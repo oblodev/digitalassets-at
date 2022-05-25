@@ -12,6 +12,12 @@
     text-align: center;
   }
 
+  @media screen and (max-width: 900px) {
+    flex: 1;
+    text-align: left;
+    margin-left: 2.5rem;
+  }
+
   span {
     color: var(--turkis);
   }
@@ -24,6 +30,10 @@
   justify-content: center;
 
   @media screen and (max-width: 400px) {
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: 900px) {
     flex-direction: column;
   }
 }
@@ -43,6 +53,11 @@
       padding-right: 3.8rem;
       padding-left: 3.8rem;
     }
+
+    @media screen and (max-width: 900px) {
+      padding-right: 3.8rem;
+      padding-left: 3.8rem;
+    }
   }
 
   &:nth-child(3) {
@@ -58,6 +73,11 @@
 
     @media screen and (max-width: 400px) {
       margin-top: 1rem;
+    }
+
+    @media screen and (max-width: 900px) {
+      margin-top: 1rem;
+      padding-right: 3rem;
     }
   }
 

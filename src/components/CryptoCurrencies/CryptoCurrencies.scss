@@ -10,6 +10,12 @@
     flex: 1;
   }
 
+  @media screen and (max-width: 900px) {
+    text-align: left;
+    flex: 1;
+    font-size: 1.35rem;
+  }
+
   @media screen and (max-width: 1200px) {
     flex: 1;
     text-align: left;
