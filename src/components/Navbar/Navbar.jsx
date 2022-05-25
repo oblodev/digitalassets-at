@@ -10,7 +10,7 @@ function Navbar() {
         <img src={logo} alt="logo" />
       </div>
       <ul className="app__navbar-links">
-        {["Kryptowährungen", "Kryptobörsen", "News", "Kontakt"].map((item) => (
+        {["Kryptowährungen", "News"].map((item) => (
           <li className="" key={`link-${item}`}>
             <div></div>
             <a href={`#${item}`}>{item}</a>

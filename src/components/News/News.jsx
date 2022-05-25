@@ -11,9 +11,7 @@ function News() {
   const [error, setError] = useState();
 
   useEffect(() => {
-    fetch(
-      "https://cryptopanic.com/api/v1/posts/?auth_token=8ecbb6f240ef822527cce301817f98f73dc55353&regions=de&metadata=true"
-    )
+    fetch(process.env.REACT_APP_NEWS_API)
       .then((response) => response.json())
       .then((data) => {
         setGermanNews(data.results);

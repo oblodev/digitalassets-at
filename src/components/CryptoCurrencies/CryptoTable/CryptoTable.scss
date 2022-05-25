@@ -4,15 +4,42 @@
   box-shadow: 0px 0px 25px 3px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   border-top: 3px solid var(--violett);
+
+  width: 1200px;
+
+  @media screen and (max-width: 400px) {
+    max-width: 400px;
+    font-size: 0.8rem;
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 760px;
+    font-size: 0.8rem !important;
+  }
+
+  @media screen and (max-width: 1000px) {
+    font-size: 0.9rem !important;
+    width: 900px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    font-size: 1rem !important;
+    width: 980px;
+  }
 }
 
 table {
-  width: 1200px !important;
+  width: 100%;
   margin-top: 2rem;
   margin-bottom: 2rem !important;
   border-radius: 20px !important;
 
   text-align: center;
+
+  @media screen and (max-width: 400px) {
+    margin-top: 0.2rem !important;
+    margin-bottom: 1rem !important;
+  }
 }
 
 thead {
@@ -22,19 +49,31 @@ thead {
 th {
   padding: 1rem !important;
   background-color: var(--bgSecondary) !important;
+
+  @media screen and (max-width: 1000px) {
+    padding: 0.5rem 0.2rem !important;
+    font-size: 1rem;
+  }
 }
 
 td {
   padding: 1.4rem 1rem !important;
   font-weight: 400 !important;
+
+  @media screen and (max-width: 400px) {
+    padding: 1rem !important;
+    font-size: 0.9rem;
+    text-align: rigt;
+  }
+
+  @media screen and (max-width: 1000px) {
+    padding: 1rem 0.25rem !important;
+    font-size: 0.9rem;
+  }
 }
 
 tbody {
   border-bottom: 1px solid var(--violett) !important;
-}
-
-.table {
-  padding: 2rem !important;
 }
 
 .table-head-row {
@@ -50,4 +89,19 @@ tbody {
   height: 24px;
   width: 24px;
   margin-right: 8px;
+}
+.ds {
+  @media screen and (max-width: 400px) {
+    display: none;
+  }
+}
+
+.maxK {
+  @media screen and (max-width: 1000px) {
+    display: none;
+  }
+
+  @media screen and (max-width: 800px) {
+    display: none;
+  }
 }

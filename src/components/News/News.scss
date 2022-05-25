@@ -20,6 +20,12 @@
     flex: 1;
   }
 
+  @media screen and (max-width: 1200px) {
+    flex: 1;
+    text-align: left;
+    margin-left: 2.4rem;
+  }
+
   span {
     color: var(--red);
   }
@@ -48,7 +54,7 @@
   .news-card {
     width: 320px;
     max-height: 460px;
-    margin: 2rem 1rem;
+    margin: 2rem 0.75rem;
     background: #fff;
     padding: 1.5rem;
     border-top: 3px solid var(--red);
@@ -56,6 +62,21 @@
     box-shadow: 0px 0px 25px 3px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+
+    @media screen and (max-width: 1200px) {
+      width: 260px;
+      max-height: 460px;
+    }
+
+    @media screen and (max-width: 1000px) {
+      width: 220px;
+      max-height: 460px;
+    }
+
+    @media screen and (max-width: 400px) {
+      width: 280px;
+      max-height: 460px;
+    }
 
     &:hover {
       box-shadow: 0px 0px 25px 3px rgba(0, 0, 0, 0.25);

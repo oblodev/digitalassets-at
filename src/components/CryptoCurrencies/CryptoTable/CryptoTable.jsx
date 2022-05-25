@@ -10,9 +10,7 @@ function CryptoTable() {
 
   useEffect(() => {
     const fetchCryptos = async () => {
-      const { data } = await axios(
-        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d"
-      );
+      const { data } = await axios(process.env.REACT_APP_CRYPTO_API);
 
       setCryptos(data);
       console.log(data);
@@ -23,16 +21,16 @@ function CryptoTable() {
 
   return (
     <div className="app__crypto-table-wrap">
-      <Table hover responsive className="app__crypto-table">
+      <Table hover responsive className="noWrap">
         <thead>
           <tr className="table-head-row">
             <th>#</th>
             <th>Kryptowährung</th>
             <th>Kurs</th>
             <th>Change 1h</th>
-            <th>Change 24h</th>
-            <th>Change 7d</th>
-            <th>Volumen 24h</th>
+            <th className="ds">Change 24h</th>
+            <th className="ds maxK">Change 7d</th>
+            <th className="ds">Volumen 24h</th>
             <th>Marktkapitalisierung</th>
           </tr>
         </thead>
@@ -52,7 +50,7 @@ function CryptoTable() {
                 <td>
                   {crypto.current_price > 1
                     ? crypto.current_price.toFixed(2)
-                    : crypto.current_price.toFixed(4)}{" "}
+                    : crypto.current_price.toFixed(4)}
                   $
                 </td>
                 <td
@@ -64,7 +62,9 @@ function CryptoTable() {
                 </td>
                 <td
                   className={
-                    crypto.price_change_percentage_24h > 0 ? "green" : "red"
+                    crypto.price_change_percentage_24h > 0
+                      ? "green ds"
+                      : "red ds"
                   }
                 >
                   {crypto.price_change_percentage_24h.toFixed(2)} %
@@ -72,13 +72,13 @@ function CryptoTable() {
                 <td
                   className={
                     crypto.price_change_percentage_7d_in_currency > 0
-                      ? "green"
-                      : "red"
+                      ? "green ds maxK"
+                      : "red ds maxK"
                   }
                 >
                   {crypto.price_change_percentage_7d_in_currency.toFixed(2)}%
                 </td>
-                <td>
+                <td className="ds">
                   {
                     <NumberFormat
                       thousandsGroupStyle="thousand"

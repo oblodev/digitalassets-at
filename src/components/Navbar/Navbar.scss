@@ -18,6 +18,10 @@
 
   img {
     height: 100px;
+
+    @media screen and (max-width: 400px) {
+      height: 80px;
+    }
   }
 }
 
@@ -44,5 +48,9 @@
     &:hover {
       color: var(--violett);
     }
+  }
+
+  @media screen and (max-width: 400px) {
+    display: none;
   }
 }
