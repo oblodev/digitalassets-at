@@ -1,13 +1,14 @@
 .app__crypto-header {
   font-size: 1.6rem;
   font-weight: 700;
-  flex: 0.625;
-  text-align: right;
+  flex: 1;
+  text-align: center;
 
   @media screen and (max-width: 400px) {
     font-size: 1.2rem;
     text-align: left;
     flex: 1;
+    margin-top: 2rem;
   }
 
   @media screen and (max-width: 900px) {

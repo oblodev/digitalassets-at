@@ -9,14 +9,24 @@ function News() {
   const [germanNews, setGermanNews] = useState([]);
   const [isFetched, setIsFetched] = useState(false);
   const [error, setError] = useState();
+  const headers = {
+    "x-api-key": "6GvgKwdR4S-mYcnnNGVBZIafwzEbMEKZ9fgBpNuT8Bs",
+  };
+
+  const params = { q: "krypto", lang: "de", sort_by: "relevancy", page: "1" };
 
   useEffect(() => {
-    fetch(process.env.REACT_APP_NEWS_API)
+    fetch(
+      "https://api.newscatcherapi.com/v2/search?q=Kryptowährungen&lang=de&sort_by=date",
+      {
+        headers,
+      }
+    )
       .then((response) => response.json())
       .then((data) => {
-        setGermanNews(data.results);
+        setGermanNews(data.articles);
         setIsFetched(true);
-        console.log(data.results);
+        console.log(data.articles);
       })
       .catch((error) => setError(error));
   }, []);
@@ -38,19 +48,19 @@ function News() {
         transition={{ duration: 0.65 }}
         className="app__news-show"
       >
-        {germanNews &&
+        {isFetched &&
           germanNews.slice(0, 4).map((news) => (
-            <a href={news.url} target="_blank" rel="noreferrer">
+            <a href={news.link} target="_blank" rel="noreferrer">
               <div className="news-card">
                 <div className="news-head">
                   <img
-                    src={news?.metadata?.image || NewsImg}
+                    src={news?.media || NewsImg}
                     alt="news-image"
                     className="news-image"
                   />
-                  <h3 key={news.id}>{news.title}</h3>
+                  <h3 key={news._id}>{news.title}</h3>
                 </div>
-                <p>{news.metadata.description.substring(0, 120)}</p>
+                <p>{news.excerpt.substring(0, 120)}</p>
               </div>
             </a>
           ))}
@@ -60,19 +70,19 @@ function News() {
         transition={{ duration: 0.65 }}
         className="app__news-show"
       >
-        {germanNews &&
+        {isFetched &&
           germanNews.slice(5, 9).map((news) => (
-            <a href={news.url} target="_blank" rel="noreferrer">
+            <a href={news.link} target="_blank" rel="noreferrer">
               <div className="news-card">
                 <div className="news-head">
                   <img
-                    src={news?.metadata?.image || NewsImg}
+                    src={news?.media || NewsImg}
                     alt="news-image"
                     className="news-image"
                   />
-                  <h3 key={news.id}>{news.title}</h3>
+                  <h3 key={news._id}>{news.title}</h3>
                 </div>
-                <p>{`${news.metadata.description.substring(0, 100)} ...`}</p>
+                <p>{news.excerpt.substring(0, 120)}</p>
               </div>
             </a>
           ))}
