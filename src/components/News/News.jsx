@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./News.scss";
-import axios from "axios";
 
 import NewsImg from "../../images/News.png";
 import { motion } from "framer-motion";
+import moment from "moment";
+import "moment/locale/de";
+
+moment.locale("de");
 
 function News() {
   const [germanNews, setGermanNews] = useState([]);
@@ -16,17 +19,13 @@ function News() {
   const params = { q: "krypto", lang: "de", sort_by: "relevancy", page: "1" };
 
   useEffect(() => {
-    fetch(
-      "https://api.newscatcherapi.com/v2/search?q=Kryptowährungen&lang=de&sort_by=date",
-      {
-        headers,
-      }
-    )
+    fetch(process.env.REACT_APP_NEWS_API, {
+      headers,
+    })
       .then((response) => response.json())
       .then((data) => {
         setGermanNews(data.articles);
         setIsFetched(true);
-        console.log(data.articles);
       })
       .catch((error) => setError(error));
   }, []);
@@ -60,7 +59,13 @@ function News() {
                   />
                   <h3 key={news._id}>{news.title}</h3>
                 </div>
-                <p>{news.excerpt.substring(0, 120)}</p>
+                <p>{news.excerpt.substring(0, 140)} ...</p>
+                <div className="news-infos">
+                  <p className="news-rights">{news.rights}</p>
+                  <p className="news-time">
+                    {moment(news.published_date).startOf("ss").fromNow()}
+                  </p>
+                </div>
               </div>
             </a>
           ))}
@@ -82,7 +87,13 @@ function News() {
                   />
                   <h3 key={news._id}>{news.title}</h3>
                 </div>
-                <p>{news.excerpt.substring(0, 120)}</p>
+                <p>{news.excerpt.substring(0, 140)} ...</p>
+                <div className="news-infos">
+                  <p className="news-rights">{news.rights}</p>
+                  <p className="news-time">
+                    {moment(news.published_date).startOf("ss").fromNow()}
+                  </p>
+                </div>
               </div>
             </a>
           ))}

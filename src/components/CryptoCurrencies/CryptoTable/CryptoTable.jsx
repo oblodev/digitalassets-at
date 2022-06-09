@@ -13,7 +13,6 @@ function CryptoTable() {
       const { data } = await axios(process.env.REACT_APP_CRYPTO_API);
 
       setCryptos(data);
-      console.log(data);
     };
 
     fetchCryptos();

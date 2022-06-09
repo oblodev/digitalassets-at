@@ -1,6 +1,6 @@
 {
   "name": "digital-assets-at",
-  "version": "0.6.9",
+  "version": "0.7.3",
   "homepage": "http://localhost:3000/",
   "proxy": "http://localhost:3000/",
   "private": true,

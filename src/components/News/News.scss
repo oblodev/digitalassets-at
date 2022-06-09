@@ -57,7 +57,7 @@
 
   .news-card {
     width: 320px;
-    max-height: 460px;
+    max-height: 520px;
     margin: 2rem 0.75rem;
     background: #fff;
     padding: 1.5rem;
@@ -69,12 +69,12 @@
 
     @media screen and (max-width: 1200px) {
       width: 260px;
-      max-height: 460px;
+      max-height: 500px;
     }
 
     @media screen and (max-width: 900px) {
       width: 400px;
-      max-height: 440px;
+      max-height: 480px;
     }
 
     @media screen and (max-width: 400px) {
@@ -112,6 +112,21 @@
       @media screen and (max-width: 900px) {
         max-width: 360px;
         max-height: 190px;
+      }
+    }
+
+    .news-infos {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .news-rights {
+        font-weight: 700;
+        font-size: 13px;
+      }
+
+      .news-time {
+        font-size: 13px !important;
       }
     }
   }
