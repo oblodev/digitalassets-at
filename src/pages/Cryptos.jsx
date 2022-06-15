@@ -16,10 +16,9 @@ function Cryptos() {
 
   useEffect(() => {
     const fetchCryptos = async () => {
-      const { data } = await axios(
-        "https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers%5B0%5D=1&orderBy=marketCap&orderDirection=desc&limit=50&offset=0",
-        { headers }
-      );
+      const { data } = await axios(process.env.REACT_APP_CRYPTOSITE_API, {
+        headers,
+      });
 
       setCryptos(data.data.coins);
       setIsFetched(true);
