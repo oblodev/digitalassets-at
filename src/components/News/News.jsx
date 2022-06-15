@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./News.scss";
 
+import axios from "axios";
 import NewsImg from "../../images/News.png";
 import { motion } from "framer-motion";
 import moment from "moment";
@@ -16,28 +17,27 @@ function News() {
     "x-api-key": "6GvgKwdR4S-mYcnnNGVBZIafwzEbMEKZ9fgBpNuT8Bs",
   };
 
-  const params = { q: "krypto", lang: "de", sort_by: "relevancy", page: "1" };
-
   useEffect(() => {
-    fetch(process.env.REACT_APP_NEWS_API, {
-      headers,
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setGermanNews(data.articles);
-        setIsFetched(true);
-      })
-      .catch((error) => setError(error));
+    const fetchNews = async () => {
+      const { data } = await axios(process.env.REACT_APP_NEWS_API, {
+        headers,
+      });
+
+      setGermanNews(data.articles);
+      setIsFetched(true);
+    };
+
+    fetchNews();
   }, []);
 
   return (
-    <div className="app__news" id="News">
+    <div className="app__news">
       <motion.div
         whileInView={{ y: [40, 0], opacity: [0, 1] }}
         transition={{ duration: 0.65 }}
         className="app__news-heading"
       >
-        <h2 className="app__news-header">
+        <h2 className="app__news-header" id="News">
           <span>// </span>Aktuelle Krypto-News
         </h2>
         <div></div>
@@ -59,7 +59,7 @@ function News() {
                   />
                   <h3 key={news._id}>{news.title}</h3>
                 </div>
-                <p>{news.excerpt.substring(0, 140)} ...</p>
+                <p>{news.excerpt.substring(0, 120)} ...</p>
                 <div className="news-infos">
                   <p className="news-rights">{news.rights}</p>
                   <p className="news-time">
@@ -87,7 +87,7 @@ function News() {
                   />
                   <h3 key={news._id}>{news.title}</h3>
                 </div>
-                <p>{news.excerpt.substring(0, 140)} ...</p>
+                <p>{news.excerpt.substring(0, 120)} ...</p>
                 <div className="news-infos">
                   <p className="news-rights">{news.rights}</p>
                   <p className="news-time">

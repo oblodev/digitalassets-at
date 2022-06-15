@@ -7,15 +7,16 @@ import NumberFormat from "react-number-format";
 
 function CryptoTable() {
   const [cryptos, setCryptos] = useState([]);
-
   useEffect(() => {
     const fetchCryptos = async () => {
       const { data } = await axios(process.env.REACT_APP_CRYPTO_API);
 
       setCryptos(data);
     };
-
     fetchCryptos();
+    const interval = setInterval(() => {
+      fetchCryptos();
+    }, 60000);
   }, []);
 
   return (
@@ -26,11 +27,11 @@ function CryptoTable() {
             <th>#</th>
             <th>Kryptowährung</th>
             <th>Kurs</th>
-            <th>Change 1h</th>
-            <th className="ds">Change 24h</th>
-            <th className="ds maxK">Change 7d</th>
+            <th>Kurs 1h</th>
+            <th className="ds">Kurs 24h</th>
+            <th className="ds maxK">Kurs 7d</th>
             <th className="ds">Volumen 24h</th>
-            <th>Marktkapitalisierung</th>
+            <th>MarketCap</th>
           </tr>
         </thead>
         <tbody>
