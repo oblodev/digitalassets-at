@@ -12,12 +12,12 @@
     font-size: 0.8rem;
   }
 
-  @media screen and (max-width: 800px) {
-    width: 760px;
+  @media screen and (max-width: 800px) and (min-width: 421px) {
+    max-width: 600px;
     font-size: 0.8rem !important;
   }
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1000px) and (min-width: 801px) {
     font-size: 0.9rem !important;
     width: 900px;
   }
@@ -92,6 +92,10 @@ tbody {
 }
 .ds {
   @media screen and (max-width: 420px) {
+    display: none;
+  }
+
+  @media screen and (max-width: 800px) and (min-width: 421px) {
     display: none;
   }
 }

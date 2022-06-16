@@ -14,9 +14,9 @@ function Navbar() {
       </div>
       <ul className="app__navbar-links">
         {["Kryptowährungen", "News"].map((item) => (
-          <li className="" key={`link-${item}`}>
+          <li key={`link-${item}`}>
             <div></div>
-            <a href={`#${item}`}>{item}</a>
+            <a href={`/#${item}`}>{item}</a>
           </li>
         ))}
       </ul>
