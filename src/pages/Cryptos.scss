@@ -24,6 +24,22 @@
       ". . . ."
       ". . . ."
       ". . . .";
+
+    @media screen and (max-width: 420px) {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media screen and (max-width: 920px) and (min-width: 421px) {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      gap: 0.1em 0.1em;
+      grid-template-areas:
+        ". . . "
+        ". . . "
+        ". . . "
+        ". . . ";
+    }
   }
 
   &__card {
@@ -35,6 +51,10 @@
     border-top: 4px solid var(--violett);
     border-radius: 20px;
     transition: all 0.3s ease;
+
+    @media screen and (max-width: 920px) and (min-width: 421px) {
+      padding: 1rem;
+    }
   }
 
   &__title {

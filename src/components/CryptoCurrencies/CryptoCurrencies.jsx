@@ -17,7 +17,7 @@ function CryptoCurrencies() {
           Marktkapitalisierung
         </h1>
         <div className="app__crypto-more">
-          <Link to="/kryptowaehrungen">Mehr Krypto</Link>
+          <Link to="/kryptowaehrungen">Mehr Kryptos</Link>
         </div>
       </motion.div>
       <motion.div

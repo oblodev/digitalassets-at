@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Cryptos.scss";
 
+import { Link } from "react-router-dom";
 import axios from "axios";
 import NumberFormat from "react-number-format";
 import { motion } from "framer-motion";
@@ -93,7 +94,10 @@ function Cryptos() {
                 </p>
               </div>
               <div className="cryptos__btn">
-                <button className="cryptos-btn">Mehr info ...</button>
+                <Link key={crypto.uuid} to={`/crypto/${crypto.uuid}`}>
+                  {" "}
+                  <button className="cryptos-btn">Mehr info ...</button>
+                </Link>
               </div>
             </div>
           ))}

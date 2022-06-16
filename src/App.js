@@ -7,6 +7,7 @@ import News from "./components/News/News";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "./components/Footer/Footer";
 import Cryptos from "./pages/Cryptos";
+import CryptoDetails from "./components/CryptoDetails/CryptoDetails";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             }
           ></Route>
           <Route path="/kryptowaehrungen" element={<Cryptos />}></Route>
+          <Route path="/crypto/:coinId" element={<CryptoDetails />}></Route>
         </Routes>
         <Footer />
       </div>

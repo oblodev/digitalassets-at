@@ -7,7 +7,7 @@
 
   width: 1200px;
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 420px) {
     max-width: 400px;
     font-size: 0.8rem;
   }
@@ -36,7 +36,7 @@ table {
 
   text-align: center;
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 420px) {
     margin-top: 0.2rem !important;
     margin-bottom: 1rem !important;
   }
@@ -60,7 +60,7 @@ td {
   padding: 1.4rem 1rem !important;
   font-weight: 400 !important;
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 420px) {
     padding: 1rem !important;
     font-size: 0.9rem;
     text-align: rigt;
@@ -91,7 +91,7 @@ tbody {
   margin-right: 8px;
 }
 .ds {
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 420px) {
     display: none;
   }
 }
