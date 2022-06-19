@@ -53,6 +53,16 @@
     }
   }
 
+  &__search {
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    border: 1px solid var(--violett);
+    border-radius: 5px;
+    outline: none;
+  }
+
   &__card {
     background: var(--bgSecondary) !important;
     margin: 1rem;
@@ -94,13 +104,14 @@
 
   &__btn {
     margin-top: 2rem;
+
     .cryptos-btn {
-      padding: 0.4rem 1rem;
       background: var(--bgSecondary);
       border: 1px solid var(--violett);
       transition: all 0.3s ease-in-out;
       border-radius: 5px;
       font-size: 0.9rem;
+      padding: 0.5rem 0.75rem;
 
       &:hover {
         background: var(--violett);
