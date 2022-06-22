@@ -12,9 +12,9 @@ moment.locale("de");
 function News() {
   const [germanNews, setGermanNews] = useState([]);
   const [isFetched, setIsFetched] = useState(false);
-  const [error, setError] = useState();
+
   const headers = {
-    "x-api-key": "6GvgKwdR4S-mYcnnNGVBZIafwzEbMEKZ9fgBpNuT8Bs",
+    "x-api-key": process.env.REACT_APP_NEWS_API_KEY,
   };
 
   useEffect(() => {

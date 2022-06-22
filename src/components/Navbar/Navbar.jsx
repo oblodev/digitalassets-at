@@ -1,6 +1,5 @@
 import React from "react";
 import "./Navbar.scss";
-import { motion } from "framer-motion";
 import logo from "../../images/logo_400x140.png";
 import { Link } from "react-router-dom";
 

@@ -15,7 +15,7 @@ function CryptoDetails() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [sparklineData, setSparklineData] = useState([]);
   const headers = {
-    "X-RapidAPI-Key": "965544b128msh602fdb4437bf366p1faec3jsnd3773b9075b7",
+    "X-RapidAPI-Key": process.env.REACT_APP_CRYPTO_API_KEY,
     "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
   };
 

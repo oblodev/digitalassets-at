@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import "./Home.scss";
-import axios from "axios";
+
 import NumberFormat from "react-number-format";
 import { motion } from "framer-motion";
 

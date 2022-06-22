@@ -14,7 +14,7 @@ function CryptoTable() {
       setCryptos(data);
     };
     fetchCryptos();
-    const interval = setInterval(() => {
+    setInterval(() => {
       fetchCryptos();
     }, 60000);
   }, []);
