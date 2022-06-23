@@ -19,14 +19,10 @@
   font-size: 1.6rem;
   font-weight: 700;
   text-align: center;
+  transition: all 0.35s ease-in-out;
 
   &.dark {
     color: var(--text-dark);
-    transition: all 0.35s ease-in-out;
-  }
-
-  &.light {
-    transition: all 0.35s ease-in-out;
   }
 
   @media screen and (max-width: 420px) {
@@ -68,10 +64,11 @@
     font-weight: 500;
     border-radius: 10px;
     border: 1px solid var(--violett);
+    transition: all 0.35s ease-in-out;
 
     &.dark {
       background: var(--bgDark);
-      transition: all 0.35s ease-in-out;
+
       color: var(--bgSecondary);
       border: 1px solid var(--violett);
 
@@ -79,10 +76,6 @@
         background: var(--bgSecondary);
         color: var(--violett);
       }
-    }
-
-    &.light {
-      transition: all 0.35s ease-in-out;
     }
 
     @media screen and (max-width: 420px) {

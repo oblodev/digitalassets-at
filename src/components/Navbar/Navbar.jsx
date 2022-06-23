@@ -1,9 +1,13 @@
-import React, { useContext } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useTheme } from "../../hooks/useTheme";
+import { RiMenu4Fill } from "react-icons/ri";
+import { HiX } from "react-icons/hi";
+import { motion } from "framer-motion";
 
 // styles
 import "./Navbar.scss";
+
 // images
 import logo from "../../images/logo_400x140.png";
 import logoLight from "../../images/DA_logo_light.png";
@@ -18,7 +22,8 @@ function Navbar() {
   const toggleMode = () => {
     changeMode(mode === "light" ? "dark" : "light");
   };
-  console.log(mode);
+
+  const [toggleSide, setToggleSide] = useState(false);
 
   return (
     <div className={`app__navbar ${mode}`}>
@@ -38,6 +43,33 @@ function Navbar() {
             </li>
           ))}
         </ul>
+        <div className="app__navbar-side">
+          <RiMenu4Fill
+            onClick={() => setToggleSide(true)}
+            className={`app__navbar-side-icon ${mode}`}
+          />
+          {toggleSide && (
+            <motion.div
+              whileInView={{ x: [300, 0], opacity: [0, 1] }}
+              transition={{ duration: 0.45, ease: "easeOut" }}
+            >
+              <HiX className="x" onClick={() => setToggleSide(false)} />
+              <ul>
+                {["Statistiken", "Kryptowährungen", "News"].map((item) => (
+                  <li key={`link-${item}`}>
+                    <HashLink
+                      smooth
+                      to={`/#${item}`}
+                      onClick={() => setToggleSide(false)}
+                    >
+                      {item}
+                    </HashLink>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          )}
+        </div>
         <div className="app__navbar-mode">
           <BiBrightnessHalf
             className="app__navbar-mode-icon"

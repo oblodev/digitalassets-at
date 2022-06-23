@@ -11,14 +11,10 @@
   position: fixed;
   top: 0;
   z-index: 999;
+  transition: all 0.35s ease-in-out;
 
   &.dark {
     background-color: var(--bgDarkNav) !important;
-    transition: all 0.35s ease-in-out;
-  }
-
-  &.light {
-    transition: all 0.35s ease-in-out;
   }
 }
 
@@ -66,10 +62,100 @@
   @media screen and (max-width: 420px) {
     display: none;
   }
+
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
+}
+
+.app__navbar-side {
+  margin-right: 1rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+
+  div {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 5;
+    padding: 1rem;
+    width: 80%;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+    background-color: var(--violett);
+
+    svg {
+      width: 30px;
+      height: 30px;
+      color: var(--text-primary);
+      margin: 0.5rem 1rem;
+      color: #fff;
+    }
+
+    ul {
+      list-style: none;
+
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      li {
+        margin: 1rem;
+
+        a {
+          color: #fff;
+          text-decoration: none;
+          font-size: 1.2rem;
+
+          font-weight: 500;
+
+          transition: all 0.36s ease-in-out;
+
+          &:hover {
+            color: yellow;
+          }
+        }
+      }
+    }
+  }
+
+  &-icon {
+    width: 24px;
+    height: 24px;
+
+    &.dark {
+      color: var(--text-dark);
+    }
+  }
+
+  @media screen and (min-width: 900px) {
+    display: none;
+  }
 }
 
 .app__navbar-link-mode-wrapper {
   display: flex;
+}
+
+.app__navbar-mode {
+  svg {
+    margin-top: 3px;
+  }
 }
 
 .app__navbar-mode-icon {
@@ -78,4 +164,10 @@
   cursor: pointer;
 
   color: var(--text-primary);
+}
+
+.x {
+  cursor: pointer;
+  width: 26px;
+  height: 26px;
 }
