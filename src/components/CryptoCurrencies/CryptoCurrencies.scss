@@ -20,6 +20,15 @@
   font-weight: 700;
   text-align: center;
 
+  &.dark {
+    color: var(--text-dark);
+    transition: all 0.35s ease-in-out;
+  }
+
+  &.light {
+    transition: all 0.35s ease-in-out;
+  }
+
   @media screen and (max-width: 420px) {
     font-size: 1.2rem;
     margin-top: 2rem;
@@ -59,6 +68,22 @@
     font-weight: 500;
     border-radius: 10px;
     border: 1px solid var(--violett);
+
+    &.dark {
+      background: var(--bgDark);
+      transition: all 0.35s ease-in-out;
+      color: var(--bgSecondary);
+      border: 1px solid var(--violett);
+
+      &:hover {
+        background: var(--bgSecondary);
+        color: var(--violett);
+      }
+    }
+
+    &.light {
+      transition: all 0.35s ease-in-out;
+    }
 
     @media screen and (max-width: 420px) {
       padding: 0.5rem;

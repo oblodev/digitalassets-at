@@ -2,6 +2,11 @@
   margin-top: 12rem;
   width: 1000px;
   height: auto;
+  transition: all 0.35s ease-in-out;
+
+  &.dark {
+    color: var(--text-dark);
+  }
 
   @media screen and (max-width: 420px) {
     width: 390px;

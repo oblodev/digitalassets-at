@@ -7,6 +7,7 @@ import axios from "axios";
 import { Sparklines, SparklinesLine } from "react-sparklines";
 import { Markup } from "interweave";
 import { motion } from "framer-motion";
+import { useTheme } from "../../hooks/useTheme";
 
 function CryptoDetails() {
   const { coinId } = useParams();
@@ -14,6 +15,8 @@ function CryptoDetails() {
   const [isFetched, setIsFetched] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const [sparklineData, setSparklineData] = useState([]);
+  const { mode } = useTheme();
+
   const headers = {
     "X-RapidAPI-Key": process.env.REACT_APP_CRYPTO_API_KEY,
     "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
@@ -38,7 +41,7 @@ function CryptoDetails() {
   }, []);
 
   return (
-    <div className="cryptodetails">
+    <div className={`cryptodetails ${mode}`}>
       {isFetched ? (
         <div className="cryptodetails__wrapper">
           <div className="cryptodetails__infos">

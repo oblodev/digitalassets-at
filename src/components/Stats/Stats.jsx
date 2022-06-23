@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
 
-import "./Home.scss";
+import "./Stats.scss";
 
 import NumberFormat from "react-number-format";
 import { motion } from "framer-motion";
+import { useTheme } from "../../hooks/useTheme";
 
-function Home() {
+function Stats() {
   const [globalStats, setGlobalStats] = useState([]);
   const [isFetched, setIsFetched] = useState(false);
   const [error, setError] = useState();
+
+  const { mode } = useTheme();
 
   useEffect(() => {
     fetch("https://api.coingecko.com/api/v3/global")
@@ -27,7 +30,7 @@ function Home() {
         transition={{ duration: 0.65 }}
         className="app__home-heading"
       >
-        <h1 className="app__home-header">
+        <h1 className={`app__home-header ${mode}`} id="Statistiken">
           <span>// </span>Globale Krypto-Statistiken
         </h1>
 
@@ -38,7 +41,7 @@ function Home() {
         transition={{ duration: 0.5 }}
         className="app__home-stats"
       >
-        <div className="app__home-card">
+        <div className={`app__home-card ${mode}`}>
           <h3>Krypto-Marktkapitalisierung</h3>
           <p className="p-text">
             {isFetched ? (
@@ -69,7 +72,7 @@ function Home() {
             % <span> in den letzten 24h</span>
           </p>{" "}
         </div>
-        <div className="app__home-card">
+        <div className={`app__home-card ${mode}`}>
           <h3>24-Stunden-Volumen</h3>
           <p className="p-text">
             {isFetched ? (
@@ -89,7 +92,7 @@ function Home() {
           </p>
           <p className="none">.</p>
         </div>
-        <div className="app__home-card">
+        <div className={`app__home-card ${mode}`}>
           <h3>
             BTC Marktkapitalisierungs-
             <br />
@@ -103,7 +106,7 @@ function Home() {
           </p>
           <p className="none">.</p>
         </div>
-        <div className="app__home-card">
+        <div className={`app__home-card ${mode}`}>
           <h3>Anzahl Kryptowährungen</h3>
           <p></p>
           <p className="p-text">
@@ -116,4 +119,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Stats;

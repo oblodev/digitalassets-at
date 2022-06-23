@@ -1,6 +1,6 @@
 {
   "name": "digital-assets-at",
-  "version": "0.8.4",
+  "version": "0.8.8",
   "homepage": "http://localhost:3000/",
   "proxy": "http://localhost:3000/",
   "private": true,
@@ -23,8 +23,10 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.4.0",
     "react-dom": "^18.1.0",
+    "react-icons": "^4.4.0",
     "react-number-format": "^4.9.3",
     "react-router-dom": "^6.3.0",
+    "react-router-hash-link": "^2.4.3",
     "react-scripts": "5.0.1",
     "react-sparklines": "^1.7.0",
     "web-vitals": "^2.1.4"

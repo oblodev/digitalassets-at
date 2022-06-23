@@ -5,11 +5,13 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import NumberFormat from "react-number-format";
 import { motion } from "framer-motion";
+import { useTheme } from "../hooks/useTheme";
 
 function Cryptos() {
   const [cryptos, setCryptos] = useState([]);
   const [text, setText] = useState("");
   const [isFetched, setIsFetched] = useState(false);
+  const { mode } = useTheme();
 
   const headers = {
     "X-RapidAPI-Key": "965544b128msh602fdb4437bf366p1faec3jsnd3773b9075b7",
@@ -35,7 +37,7 @@ function Cryptos() {
         whileInView={{ y: [40, 0], opacity: [0, 1] }}
         transition={{ duration: 0.55 }}
       >
-        <h2>
+        <h2 className={mode}>
           <span>//</span> Kryptowährungen
         </h2>
       </motion.div>
@@ -69,7 +71,7 @@ function Cryptos() {
               }
             })
             .map((crypto) => (
-              <div className="cryptos__card">
+              <div className={`cryptos__card ${mode}`}>
                 <div className="cryptos__title">
                   <h3>
                     <span className="violett">//</span> {crypto.name}
@@ -118,7 +120,9 @@ function Cryptos() {
                 <div className="cryptos__btn">
                   <Link key={crypto.uuid} to={`/crypto/${crypto.uuid}`}>
                     {" "}
-                    <button className="cryptos-btn">Mehr info ...</button>
+                    <button className={`cryptos-btn ${mode}`}>
+                      Mehr info ...
+                    </button>
                   </Link>
                 </div>
               </div>

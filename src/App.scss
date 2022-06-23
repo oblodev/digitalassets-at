@@ -5,7 +5,11 @@
 
   --text-primary: #16303a;
   --text-secondary: #fff;
+  --text-dark: #f7f7f7;
   --bgPrimary: #f9f9fb;
+  --bgDark: #1d2630;
+  --bgDarkNav: #1b2430;
+  --bgDarkCard: #dfe5ec;
   --bgSecondary: #fff;
   --violett: #5e17eb;
   --turkis: #5ce1e6;
@@ -27,6 +31,10 @@
   font-family: var(--primary-font);
   background: var(--bgPrimary);
   color: var(--text-primary);
+
+  &.dark {
+    background: var(--bgDark);
+  }
 }
 
 .app__home,

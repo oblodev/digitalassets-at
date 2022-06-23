@@ -5,6 +5,15 @@
   text-align: center;
   margin-top: 4rem;
 
+  &.dark {
+    color: var(--text-dark);
+    transition: all 0.35s ease-in-out;
+  }
+
+  &.light {
+    transition: all 0.35s ease-in-out;
+  }
+
   @media screen and (max-width: 420px) {
     font-size: 1.2rem;
     text-align: center;
@@ -55,7 +64,7 @@
 }
 
 .app__home-card {
-  background: var(--bgSecondary) !important;
+  background: var(--bgSecondary);
   margin: 1rem;
   padding: 2rem;
 
@@ -63,6 +72,15 @@
   border-top: 4px solid var(--turkis);
   border-radius: 20px;
   transition: all 0.3s ease;
+
+  &.dark {
+    background: var(--bgDarkCard);
+    transition: all 0.35s ease-in-out;
+  }
+
+  &.light {
+    transition: all 0.35s ease-in-out;
+  }
 
   @media screen and (max-width: 899px) and (min-width: 421px) {
     padding: 2rem 1rem;

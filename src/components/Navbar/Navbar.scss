@@ -11,6 +11,15 @@
   position: fixed;
   top: 0;
   z-index: 999;
+
+  &.dark {
+    background-color: var(--bgDarkNav) !important;
+    transition: all 0.35s ease-in-out;
+  }
+
+  &.light {
+    transition: all 0.35s ease-in-out;
+  }
 }
 
 .app__navbar-logo {
@@ -45,6 +54,10 @@
     font-size: 1.05rem;
     transition: all 0.3s ease-in-out;
 
+    &.dark {
+      color: #fff;
+    }
+
     &:hover {
       color: var(--violett);
     }
@@ -53,4 +66,16 @@
   @media screen and (max-width: 420px) {
     display: none;
   }
+}
+
+.app__navbar-link-mode-wrapper {
+  display: flex;
+}
+
+.app__navbar-mode-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+
+  color: var(--text-primary);
 }

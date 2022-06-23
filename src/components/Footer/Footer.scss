@@ -11,12 +11,20 @@
   p {
     margin-bottom: 0;
     font-size: 0.85rem;
+
+    &.dark {
+      color: var(--text-secondary);
+    }
   }
 
   a {
     text-decoration: none;
     color: var(--text-primary);
     transition: all 0.3s ease-in-out;
+
+    &.dark {
+      color: var(--text-secondary);
+    }
 
     &:hover {
       color: var(--turkis);

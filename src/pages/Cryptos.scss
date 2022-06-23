@@ -9,6 +9,10 @@
     font-weight: 700;
     margin-bottom: 2.5rem;
 
+    &.dark {
+      color: var(--text-dark);
+    }
+
     span {
       color: var(--violett);
     }
@@ -64,7 +68,7 @@
   }
 
   &__card {
-    background: var(--bgSecondary) !important;
+    background: var(--bgSecondary);
     margin: 1rem;
     padding: 2rem;
     font-size: 0.95rem;
@@ -72,6 +76,10 @@
     border-top: 4px solid var(--violett);
     border-radius: 20px;
     transition: all 0.3s ease;
+
+    &.dark {
+      background: var(--bgDarkCard);
+    }
 
     @media screen and (max-width: 920px) and (min-width: 421px) {
       padding: 1rem;
@@ -112,6 +120,15 @@
       border-radius: 5px;
       font-size: 0.9rem;
       padding: 0.5rem 0.75rem;
+
+      &.dark {
+        background: var(--violett);
+        color: var(--text-dark);
+
+        &:hover {
+          background: var(--bgDark);
+        }
+      }
 
       &:hover {
         background: var(--violett);

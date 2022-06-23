@@ -4,8 +4,10 @@ import "./CryptoTable.scss";
 import axios from "axios";
 import Table from "react-bootstrap/Table";
 import NumberFormat from "react-number-format";
+import { useTheme } from "../../../hooks/useTheme";
 
 function CryptoTable() {
+  const { mode } = useTheme();
   const [cryptos, setCryptos] = useState([]);
   useEffect(() => {
     const fetchCryptos = async () => {
@@ -20,7 +22,7 @@ function CryptoTable() {
   }, []);
 
   return (
-    <div className="app__crypto-table-wrap">
+    <div className={`app__crypto-table-wrap ${mode}`}>
       <Table hover responsive className="noWrap">
         <thead>
           <tr className="table-head-row">
