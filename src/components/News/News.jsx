@@ -15,17 +15,14 @@ function News() {
   const [isFetched, setIsFetched] = useState(false);
   const { mode } = useTheme();
 
-  const headers = {
-    "x-api-key": process.env.REACT_APP_NEWS_API_KEY,
-  };
-
   useEffect(() => {
     const fetchNews = async () => {
-      const { data } = await axios(process.env.REACT_APP_NEWS_API, {
-        headers,
-      });
+      const { data } = await axios(
+        "https://cryptopanic.com/api/v1/posts/?auth_token=8ecbb6f240ef822527cce301817f98f73dc55353&regions=de&public=true&metadata=true"
+      );
 
-      setGermanNews(data.articles);
+      console.log(data.results);
+      setGermanNews(data.results);
       setIsFetched(true);
     };
 
@@ -51,21 +48,22 @@ function News() {
       >
         {isFetched &&
           germanNews.slice(0, 4).map((news) => (
-            <a href={news.link} target="_blank" rel="noreferrer">
+            <a href={news.url} target="_blank" rel="noreferrer">
               <div className={`news-card ${mode}`}>
                 <div className="news-head">
                   <img
-                    src={news?.media || NewsImg}
+                    src={news?.metadata.image || NewsImg}
                     alt="news-image"
                     className="news-image"
                   />
-                  <h3 key={news._id}>{news.title}</h3>
+                  <h3 key={news.id}>{news.title}</h3>
                 </div>
-                <p>{news.excerpt.substring(0, 120)} ...</p>
+                <p>{news.metadata.description.substring(0, 120)}</p>
+
                 <div className="news-infos">
-                  <p className="news-rights">{news.rights}</p>
+                  <p className="news-rights">{news.source.domain}</p>
                   <p className="news-time">
-                    {moment(news.published_date).startOf("ss").fromNow()}
+                    {moment(news.at).startOf("hour").fromNow()}
                   </p>
                 </div>
               </div>
@@ -79,21 +77,21 @@ function News() {
       >
         {isFetched &&
           germanNews.slice(5, 9).map((news) => (
-            <a href={news.link} target="_blank" rel="noreferrer">
+            <a href={news.url} target="_blank" rel="noreferrer">
               <div className={`news-card ${mode}`}>
                 <div className="news-head">
                   <img
-                    src={news?.media || NewsImg}
+                    src={news?.metadata.image || NewsImg}
                     alt="news-image"
                     className="news-image"
                   />
-                  <h3 key={news._id}>{news.title}</h3>
+                  <h3 key={news.id}>{news.title}</h3>
                 </div>
-                <p>{news.excerpt.substring(0, 120)} ...</p>
+
                 <div className="news-infos">
-                  <p className="news-rights">{news.rights}</p>
+                  <p className="news-rights">{news.source.domain}</p>
                   <p className="news-time">
-                    {moment(news.published_date).startOf("ss").fromNow()}
+                    {moment(news.published_at).startOf("hour").fromNow()}
                   </p>
                 </div>
               </div>
